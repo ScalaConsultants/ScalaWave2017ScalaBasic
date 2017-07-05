@@ -1,0 +1,1095 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/highlight.min.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Here goes the content -->
+
+				<section>
+					<h1>Getting Started</h1>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: I want to be a better programmer!</div>
+						<div>To tackle problems faster and more effectively</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Scala</div>
+						<div>Allows you to do more with less work</div>
+						<ul>
+							<li>concise syntax</li>
+							<li>simpler API</li>
+							<li>expressive</li>
+						</ul>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Scala</div>
+						<div>Allows you to tackle complexity</div>
+						<ul>
+							<li>functional concepts to the rescue!</li>
+							<li>you can focus on the problem solving, not fight with the language</li>
+							<li>type safe</li>
+							<li>large ecosystem with battle-proven tools</li>
+						</ul>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Learning Scala</div>
+						<div>Makes you a better programmer</div>
+						<ul>
+							<li>requires you to shift your thinking</li>
+							<li>can teach you new tricks that are applicable elsewhere</li>
+							<li>Scala inspires and is inspired by other languages</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: I want to easily test my code and play with it</div>
+						<div>In order to help me with prototyping my solutions</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>REPL</div>
+						<div>Run sbt console in the project ...</div>
+						<div>... and play with the code</div>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>REPL</div>
+						<pre><code class="scala">
+val immutable = 3
+val updatedImmutable = immutable + 1
+var mutable = 10
+mutable += 1
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>REPL</div>
+						<pre><code class="scala">
+val number = 1
+val string = "some string value"
+val pair = (1,"string")
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: Working with console does not scale</div>
+						<div>Professional programmers need the right tools</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>IDEs</div>
+						<div>Most IDEs come with Scala support</div>
+						<ul>
+							<li>IntelliJ IDEA</li>
+							<li>Scala IDE</li>
+							<li>Ensime for Emacs</li>
+							<li>...</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>IntelliJ IDEA</div>
+						<div>Project overview</div>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>IntelliJ IDEA</div>
+						<div>Basic functions</div>
+					</section>
+				</section>
+
+				<section>
+					<h1>Basic Data Structures</h1>
+					<div>At the beginning there was data</div>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: Storing sequential data</div>
+						<div>A simple, yet powerful data structure is needed</div>
+						<div>The basic building block of many algorithms</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Seq</div>
+						<div>General interface for various implementations, covers the typical cases</div>
+						<ul>
+							<li>immutable, so safe for parallel operations</li>
+							<li>coherent API</li>
+							<li>reasonable performance for common cases</li>
+							<li>type-safe, stores only elements of a specific type</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Seq</div>
+						<div>Immutable - the only way to change is to copy with modification</div>
+						<pre><code class="scala">
+val seq = Seq(1,2,3)
+val filledWithDummyData = Seq.fill(2,3)(0)
+val appended = 999 +: Seq(1,2,3)
+val combined = Seq(1) ++ Seq(2,3)
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>Seq</div>
+						<ul>
+							<li>io.scalac.scala.basic.dataStructures.red.SeqSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: Storing unique data</div>
+						<div>We need to effectively remove duplicates</div>
+						<div>Makes many algorithms much simpler</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Set</div>
+						<div>Another general interface, has an API to cover most needs</div>
+						<ul>
+							<li>immutable, so safe for parallel operations</li>
+							<li>coherent API</li>
+							<li>reasonable performance for common cases</li>
+							<li>type-safe, stores only elements of a specific type</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Set</div>
+						<div>Type Safe - won't compile if we pass other types into it</div>
+						<pre><code class="scala">
+val set: Set[Int] = Set(1,2,3,1,2,3)
+set.contains(1)
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>Set</div>
+						<ul>
+							<li>io.scalac.scala.basic.dataStructures.red.SetSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: Binding data together</div>
+						<div>We need to put labels or identifiers on items</div>
+						<div>To group data by some unique property</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Map</div>
+						<div>Map[X,Y] maps unique keys of type X into some value Y each</div>
+						<ul>
+							<li>immutable, so safe for parallel operations</li>
+							<li>coherent API, can be seens as a Set of pairs</li>
+							<li>reasonable performance for common cases</li>
+							<li>type-safe, stores only elements of a specific type</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Map</div>
+						<div>It's API is coherent with other collection types</div>
+						<pre><code class="scala">
+val map: Map[Int, String] = Map(
+	0 -> "zero", 1 -> "one", 
+	2 -> "two", 3 -> "three")
+println(s"Peeking into a Map ${map.contains(2)}")
+println(s"Extracting value is easy ${map.get(2)}")
+println(s"Peeking into a Map ${map.contains(99)}")
+println(s"Extracting value is easy ${map.getOrElse(99, -1)}")
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Map</div>
+						<div>Core collections have similar APIs, which comes with benefits - easy & save conversions!</div>
+						<pre><code class="scala">
+val seq: Seq[Int] = Seq(1,2,3)
+val set: Set[int] = seq.toSet
+val pairSeq = Seq(1->"one", 2->"two")
+val map: Map[Int, String] = pairSeq.toMap
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>Map</div>
+						<ul>
+							<li>io.scalac.scala.basic.dataStructures.red.MapSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#BDD2AA"> 
+					<div>Practical advice</div>
+					<ul>
+						<li>keep in mind the performance characteristics</li>
+						<li>program against abstraction, not against specific type</li>
+						<li>if possible avoid deeply nested structures</li>
+						<li>laiziness might help you with resource-heavy or infinite resources</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Functional Operators</h1>
+					<div>Putting data in motion</div>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: raw data might not be that useful for us</div>
+						<div>We need to transform and process it</div>
+						<div>Many business rules boil down to transforming and combining data</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>map()</div>
+						<div>Basic building for data transformations</div>
+						<ul>
+							<li>takes a function and applies it to every element in the underling structure</li>
+							<li>embraces immutability, creates new data instead of damaging the old</li>
+							<li>easy to use and gives you full control</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>map()</div>
+						<div>Immutable - the only way to change is to copy with modification</div>
+						<pre><code class="scala">
+val transformedToText = dataSource.map(number => number + "!")
+val transformedToText = dataSource.map(number => {
+	println(s"Going to transform $number")
+	number + "!"
+})
+val transformedToText = dataSource.map(_ + "!")
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>map()</div>
+						<div>Allows chaining transforms together</div>
+						<pre><code class="scala">
+dataSource.map(_ + 1).map(_.toString).map(_.length)
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>map()</div>
+						<div>Keeps the collection properties by defaults, but can be used to transform between collction types</div>
+						<pre><code class="scala">
+val dataMap: Map[Int, String] = (1 -> "a", 2 -> "b")
+val dataSeq: Seq[Int] = dataMap.map(_._1)
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>map()</div>
+						<ul>
+							<li>io.scalac.scala.basic.functionalOperators.red.MapSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: we don't need all the data</div>
+						<div>We need to transform and process it part of the data</div>
+						<div>We would like to sanitizie data before transforming it</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>filter()</div>
+						<div>Used to keep/remove itmes from collection</div>
+						<ul>
+							<li>takes a function and applies it to every element to decide if should be kept</li>
+							<li>embraces immutability, creates new (possibly smaller) data collection</li>
+							<li>easy to use and gives you full control</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>filter()</div>
+						<div>The filtering function must return a Boolean true/false value</div>
+						<pre><code class="scala">
+val keepAll = dataSource.filter(elem => true)
+val dropAll = dataSource.filter(elem => false)
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>filter()</div>
+						<div>Real power comes from chaining</div>
+						<pre><code class="scala">
+val chainedOperators: Seq[String] = dataSource
+					.map(_ - 3)
+					.filter(_ < 0)
+					.map(_.toString)
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>filter()</div>
+						<ul>
+							<li>io.scalac.scala.basic.functionalOperators.red.FilterSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: collapse whole collection into a single value</div>
+						<div>Efect of our transformations and mappings should be a single value</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>foldLeft()</div>
+						<div>We need to go through our whole collection building up the final value</div>
+						<ul>
+							<li>takes a function and applies it to every element</li>
+							<li>this function should accept the collection value and and accumulator</li>
+							<li>highly flexible</li>
+							<li>embraces immutability, creates new (possibly smaller) data collection</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>foldLeft()</div>
+						<div>The function accepts two arguments: the current computation state and collection item</div>
+						<pre><code class="scala">
+dataSource.foldLeft(0)((acc, item) => {
+	println(s"Inspecting item $item") 
+	println(s"Current accumulator for sum is $acc")
+	acc + item
+})
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>foldLeft()</div>
+						<div>Real power comes from chaining</div>
+						<pre><code class="scala">
+val concatenateItems: String = dataSource
+    .map(_.toString)
+    .foldLeft("Items:")((acc, item) => {
+      acc + item
+    })
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>foldLeft()</div>
+						<ul>
+							<li>io.scalac.scala.basic.functionalOperators.red.FoldSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: merging collections together</div>
+						<div>Sometimes the data is nested which makes operations hard - we need to flatten the types</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>flatMap()</div>
+						<div>map</div>
+						<ul>
+							<li>applies a function to a single element of the wrapper collection</li>
+							<li>wraps the results of all applications in the original collection</li>
+						</ul>
+						<div>flatMap</div>
+						<ul>
+							<li>applies a function to a single element and returns the result wrapped</li>
+							<li>the result of all computations is put in the new wrapper</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>flatMap()</div>
+						<div>The function passed down returns a wrapped result</div>
+						<pre><code class="scala">
+val numbers = Seq(1,2,3,4)
+val mapResult: Seq[Seq[Int]] = 
+	numbers.map(num => Seq(-num, num))
+val flatMapResult: Seq[Int] = 
+	numbers.flatMap(num => Seq(-num, num))
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>flatMap()</div>
+						<div>We can use it to combine and flatten computations, especially async</div>
+						<pre><code class="scala">
+def findDivisorsFor(i: Int): Seq[Int] = ...
+val divisorNestedArray = numbers.map(n => findDivisorsFor(n))
+val divisorArray = numbers.flatMap(n => findDivisorsFor(n))
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>flatMap()</div>
+						<ul>
+							<li>io.scalac.scala.basic.functionalOperators.red.FlatMapSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#BDD2AA"> 
+					<div>Practical advice</div>
+					<ul>
+						<li>use flatMap to flatten deep structures into simpler ones</li>
+						<li>for longer, complex chains on the same type use "for" syntax sugar</li>
+						<li>when possible try to make filters the first operation in the chain</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Flow Control</h1>
+					<div>Data in motion, revised</div>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: simple if-s don't scale</div>
+						<div>We need a more roboust mechanism to handle more complext branching</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>match</div>
+						<div>A powerful tool to handle multiple branches without deep nesting</div>
+						<ul>
+							<li>a logical progression from if</li>
+							<li>gives you fine grained control over branches</li>
+							<li>also is an expersion, hence easy to use with functional operators</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>match</div>
+						<div>Can do all the same things as if ...</div>
+						<pre><code class="scala">
+if (1 == 2) {
+	println("Should not happen")
+} else {
+ 	println("1 is NOT equal 2")
+}
+(1 == 2) match {
+	case true => println("Should not happen")
+	case false => println("1 is NOT equal 2")
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>match</div>
+						<div>... but with more control</div>
+						<pre><code class="scala">
+val numberSignFound = randomNumber match {
+	case 0 =>
+		0
+	case num if num > 0 =>
+		1
+	case _ =>
+		-1
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>match</div>
+						<div>Works well with collections</div>
+						<pre><code class="scala">
+val numberSigns = randomNumbersSeq.map {
+	case 0 =>
+		0
+	case num if num > 0 =>
+		1
+	case num =>
+		-1
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>match</div>
+						<ul>
+							<li>io.scalac.scala.basic.flowControl.red.MatchSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: long chains of operations are hard to read</div>
+						<div>Especially those who contain nested expressions like ifs or flatMaps</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>for comprehension</div>
+						<ul>
+							<li>Allows us to write code that looks like a loop</li>
+							<li>but is translated to series of maps, filters and flatMaps</li>
+							<li>Since it's just a suger it works for everything that has map, filter and flatMap defined</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>for comprehension</div>
+						<div>Let's start with a basic map</div>
+						<pre><code class="scala">
+val doubleTheValues = for {
+	item <- Seq(1,2,3,4,5,6)
+} yield item * 2
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>for comprehension</div>
+						<div>Combine that with filter</div>
+						<div></div>
+						<pre><code class="scala">
+val doubleEvenNumbers = for {
+	item <- Seq(1,2,3,4,5,6)
+	if item % 2 == 0
+} yield item * 2
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>for comprehension</div>
+						<div>Allows to combine collections together</div>
+						<pre><code class="scala">
+val doubleEvenNumbers = for {
+	item <- Seq(1,2,3,4,5,6)
+	if item % 2 == 0
+} yield item * 2
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>for comprehension</div>
+						<ul>
+							<li>io.scalac.scala.basic.flowControl.red.ForSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#BDD2AA"> 
+					<div>Practical advice</div>
+					<ul>
+						<li>NoMatch exception is thrown when Scala can't match a given type</li>
+						<li>to prevent issues with NoMatch use "case _" or "case variableName"</li>
+						<li>when doing "case variableName" remember that will create a new local variableName</li>
+						<li>use "case localVariable if localVariable==externalVariable" to match for some runtime value</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h1>Fun with Functions</h1>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: we don't want to repeat ourself</div>
+						<div>We want to reuse code</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>functions</div>
+						<div>The smallest unit of reuse in Scala is a function</div>
+						<div>Fucntions come in two flavours</div>
+						<ul>
+							<li>a method declared with def</li>
+							<li>a function assigned to a variable</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>functions</div>
+						<div>Functions can be methods tied to object/class or values</div>
+						<pre><code class="scala">
+def functionAsMethod() = {
+	println(s"Function as method")
+}
+val functionAsVariable = () => {
+	println(s"Function as variable")
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>functions</div>
+						<div>Are a type in their own right</div>
+						<pre><code class="scala">
+val nextWithTypeSugar: (Int) => String = 
+	(num:Int) => (num + 1).toString
+val nextWithType: Function1[Int, String] = 
+	(num:Int) => (num + 1).toString
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>functions</div>
+						<div>Give you fine grained control over the arguments</div>
+						<pre><code class="scala">
+val add = (numberA: Int, numberB: Int) => {
+	numberA + numberB 
+}
+def multiply(numberA: Int)
+			(numberB: Int) = {
+	numberA * numberB
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>functions</div>
+						<div>Since fucntions are first class we can assign and pass as anything else</div>
+						<div></div>
+						<pre><code class="scala">
+def subtractAndCallback(numberA: Int, numberB: Int)
+			(callback: (Int) => Unit) = {
+	val result = numberA - numberB
+	callback(result)
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>functions</div>
+						<ul>
+							<li>io.scalac.scala.basic.flowControl.red.FunctionSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#BDD2AA"> 
+					<div>Practical advice</div>
+					<ul>
+						<li>passing functions as arguments is a powerful technique for modularization and callbacks</li>
+						<li>partial functions might be useful to build functions from 'parts'</li>
+						<li>(plain) Akka uses partial functions to deal with the fact that they cannot predict all possible inputs</li>
+						<li>Scala allows named params divide(divisor=19, dividend=3), useful in case of many aguments or when they are of the same type</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h1>OOP</h1>
+					<div>Blending functional and object oriented programming</div>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: we want to bundle data together</div>
+						<div>This way we can bring context to the raw data</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>case class</div>
+						<ul>
+							<li>Simplified way to create classes</li>
+							<li>Usually used to transfer data</li>
+							<li>Similar to POJOs, but on steroids</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>case class</div>
+						<div>Make grouping data easy</div>
+						<pre><code class="scala">
+case class Person(name: String, yearsOld: Int)
+val personAnn = Person("Ann", 27)
+println(s"Hello ${p.name}")
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>case class</div>
+						<div>Come with a set of useful functions</div>
+						<pre><code class="scala">
+val babyMike = Person("Mike", 2)
+val adultMike = babyMike.copy(yearsOld = 20)
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>case class</div>
+						<div>Allows to combine collections together</div>
+						<pre><code class="scala">
+people.map {
+	case Person(name, age) if age <= 18 =>
+		println(s"$name is underage")
+	case p: Person =>
+		println(s"${p.name} is an adult")
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>case class</div>
+						<ul>
+							<li>io.scalac.scala.basic.oop.red.CaseClassSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: we would like to build hierarchies of objects</div>
+						<div>This way we can model the outside world and reuse code</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>class</div>
+						<ul>
+							<li>Similar to case classes</li>
+							<li>But doesn't come with implemented methods</li>
+							<li>Allows building hierarchies of classes</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>class</div>
+						<div>Build a simple class</div>
+						<pre><code class="scala">
+class Animal(name: String, numberOfLegs: Int) {
+	override def toString() = {
+		s"Animal $name $numberOfLegs legs"
+	}
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>class</div>
+						<div>Allows to build hierarchy</div>
+						<pre><code class="scala">
+class Dog(name: String) 
+		extends Animal(name, 4)
+class Squid(name: String, numberOfLegs: Int) 
+		extends Animal(name, numberOfLegs)
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>class</div>
+						<div>Allows to combine collections together</div>
+						<pre><code class="scala">
+val shepherd = new Dog("German Shepherd")
+val humboldt = new Squid("Humboldt Squid", 10)
+
+val animals: Seq[Animal] = Seq(shepherd, humboldt)
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>class</div>
+						<ul>
+							<li>io.scalac.scala.basic.oop.red.ClassSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: where to put static data and functions</div>
+						<div>Parts of the code might be connected with a class, but not it's part</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>object</div>
+						<ul>
+							<li>Objects can be seen as "bags" with code, simialr to classes</li>
+							<li>Objects are static singletons</li>
+							<li>Only one object of given type can exist</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>object</div>
+						<div>Plain simple to declare</div>
+						<pre><code class="scala">
+object ObjectDemo extends App {
+	val numberPi = 3.14
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>object</div>
+						<div>Can hold both values and functions</div>
+						<pre><code class="scala">
+object Greeter {
+	def sayHello() = {
+		println(s"Hi!")
+	}
+}
+NestedObject.sayHello()
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: we want to program against abstraction, not concrete classes</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>trait</div>
+						<div>Trait serves two purposes:</div>
+						<ul>
+							<li>is an Interface - holds a list of function signatures</li>
+							<li>is a unit of code reuse - can have implementations ready</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>trait</div>
+						<div>Can be used to hide implementation</div>
+						<pre><code class="scala">
+trait Animal {
+	def makeSound(): String
+}
+case class Cat(name: String) extends Animal {
+	override def makeSound(): String = "Meow"
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>trait</div>
+						<div>Can also provide concrete implementations</div>
+						<pre><code class="scala">
+trait Swims {
+	def swim(): Unit = println("Swims just fine")
+}
+case class Dog(name: String) extends Animal with Swims {
+	override def makeSound(): String = "Woof woof"
+}
+						</code></pre>
+					</section>
+				</section>
+				<section data-background-color="#BDD2AA"> 
+					<div>Practical advice</div>
+					<ul>
+						<li>use case classes when you mostly want to pass data around</li>
+						<li>in public APIs prefer case classes over tuples or maps</li>
+						<li>use classes for business logic (like seervices, controllers...)</li>
+						<li>Scala uses trait linearalization so the diamond problem is solved</li>
+						<li>traits can use self reference to put requirements on classes willing to mix them in</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Containers</h1>
+					<div>Intuition:</div>
+					<ul>
+						<li>a data structure</li>
+						<li>holding at most a single item</li>
+						<li>solves a particular problem</li>
+					</ul>
+				</section>
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: Dealing with null</div>
+						<div>For interop purposes null exists in Scala</div>
+						<div>With null you can't trust anyone! Every call can potentially return null</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Option</div>
+						<div>Container that can hold either a value or indicate the value is missing</div>
+						<ul>
+							<li>a separate type, compile-type checked</li>
+							<li>visible in the type signature</li>
+							<li>makes it hard to ignore the null-case</li>
+							<li>makes it easy to handle both cases</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Option</div>
+						<div>Comes in two flavours: Some - holding a value and None - indicating null</div>
+						<div> 
+							<script src="https://gist.github.com/patryk-scalac-io/5cb2836b5e3a1fdba001b6f8d930e19c.js"></script>
+						</div>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Option</div>
+						<div>Comes in two flavours: Some - holding a value and None - indicating null</div>
+						<pre><code class="scala">
+askNameCache(101) match {
+	case Some(name) =>
+		println(s"Found $name")
+	case None =>
+		println("Nothing in cache for 101")
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Option</div>
+						<div>Defines convenient API to use it as a "normal" value</div>
+						<pre><code class="scala">
+askNameCache(101).getOrElse("Nothing Found!")
+askNameCache(101).getOrElse(makeUpADefaultValue())
+askNameCache(101).orElse(askNameCache(42))
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Option</div>
+						<div>On top of that offers monadic operators for transformations</div>
+						<pre><code class="scala">
+ askNameCache(42).map(_.toUpperCase)
+ askNameCache(42).filter(_.contains("James"))
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>Option</div>
+						<ul>
+							<li>io.scalac.scala.basic.containers.red.OptionSpec</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: handling exceptions</div>
+						<div>Just don't use them ;)</div>
+						<div>They make code harder to understand, less performant, break control flow and referential transparency ...</div>
+						<div>Unfortunately for pragmatic reasons they are hard to avoid ...</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Try</div>
+						<div>Container that can hold either a value of a computation or a an error</div>
+						<ul>
+							<li>a separate type, compile-type checked</li>
+							<li>visible in the type signature</li>
+							<li>makes it hard to ignore the null-case</li>
+							<li>makes it easy to handle both cases</li>
+						</ul>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Try</div>
+						<div>Container that can hold either a value of a computation or a an error</div>
+						<div>Intuition: an Option but for errors</div>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Try</div>
+						<div>Comes in two falvours: Success - holding a value and Failure - holding the error</div>
+						<pre><code class="scala">
+val wrappDangerousCode = Try{ someString.toDouble }
+wrappDangerousCode match {
+    case Success(result) =>
+      println(s"The result is: $result")
+    case Failure(error) =>
+      println(s"The error is: $error")
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Try</div>
+						<div>Defines convenient API to use it as a "normal" value</div>
+						<pre><code class="scala">
+val withDefault = wrappDangerousCode.getOrElse(-1)
+
+val withDefaultPerCase = wrappDangerousCode.recover {
+  case _:NumberFormatException => 0
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Try</div>
+						<div>On top of that offers monadic operators for transformations</div>
+						<pre><code class="scala">
+val mappedValue = wrappDangerousCode.map(_ * 2)
+val filteredResults = wrappDangerousCode.filter(_ <= 100)
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>Try</div>
+						<ul>
+							<li>io.scalac.scala.basic.red.TrySpec</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: asynchronous computations</div>
+						<div>How to enable asynchronous programming in an easy, manageable way?</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Future</div>
+						<div>Container will hold either a value of a computation or a an error (at one point in time)</div>
+						<ul>
+							<li>a separate type, compile-type checked</li>
+							<li>visible in the type signature</li>
+							<li>makes it hard to ignore the error-case</li>
+							<li>represents a result disconnected from time</li>
+						</ul>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Future</div>
+						<div>Container will hold either a value of a computation or a an error (at one point in time)</div>
+						<div>Intuition: an Try that will be filled at one point in time</div>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Future</div>
+						<div>Allows to easily delegate work to other Threads</div>
+						<pre><code class="scala">
+val runOnAnotherThread = Future {
+	/// expensive computations happening here
+	...
+	Random.nextInt(100)
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Future</div>
+						<div>Still, the calling Thread keeps control over the computation (for instance: can handle errors)</div>
+						<pre><code class="scala">
+val failOnAnotherThread = Future {
+	// this will fail on another Thread, but exception will 
+	"Fail".toDouble
+}
+val fallbackToDefault = failOnAnotherThread.recover {
+	case err: NumberFormatException => 0
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Future</div>
+						<div>As with other wrappers Future contents can be trasnformed with usual operators</div>
+						<pre><code class="scala">
+val mappedValue = runOnAnotherThread.map(_ * 2)
+val filteredValue = runOnAnotherThread.filter(_ < 2)
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>Future</div>
+						<ul>
+							<li>io.scalac.scala.basic.containers.red.FutureSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#BDD2AA"> 
+					<div>Practical advice</div>
+					<ul>
+						<li>Future uses ExecutionContext to dispatch work to real threads</li>
+						<li>if you wany to control how work is spread provide your own ExecutionContext</li>
+						<li>where possible avoid using callbacks with Futures</li>
+						<li>never throw exceptions in your code - return an error value instead</li>
+						<li>never return null - return an value indicating lack of value instead</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<section data-background-color="#FF9999"> <!-- Problem statement -->
+						<div>Problem: building distributed applications</div>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Akka</div>
+						<div>Popular framework for distributed computations using the actor model</div>
+						<ul>
+							<li>an intuitive computation model</li>
+							<li>pushing the hardware to the limits</li>
+							<li>easy to scale out to other machines</li>
+							<li>universal and flexible</li>
+						</ul>
+					</section>
+					<section data-background-color="#FFFF99"> <!-- Solution -->
+						<div>Akka</div>
+						<div>Uses the actor model</div>
+						<ul>
+							<li>actor is an independent unit and can act on his own</li>
+							<li>reacts to messages and sends messages to other actors</li>
+							<li>processes only one message at a time</li>
+							<li>can be restarted if crashes or becomes corrupted</li>
+							<li>has "parent" actor that help him recover from crashes</li>
+						</ul>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Akka</div>
+						<div>Creating a basic actor is easy</div>
+						<pre><code class="scala">
+class ParentActor() extends Actor {
+  override def receive = { 
+    case IntroduceYourself =>
+      println(s"Hello, my name is ${self}")
+  }
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#E5FFCC"> <!-- How to use the solution -->
+						<div>Akka</div>
+						<div>Interacting with other actors is done with messages</div>
+						<pre><code class="scala">
+class ParentActor() extends Actor {
+  override def receive = { 
+    case Ping =>
+      // actors can create child actors
+      // actors communicate by sending messages
+      val child = context.actorOf(Props[ChildActor])
+      child ! Ping
+    case Pong =>
+      sender() ! Ping
+  }
+}
+						</code></pre>
+					</section>
+					<section data-background-color="#CCE5FF"> <!-- Tasks to do -->
+						<div>Akka</div>
+						<ul>
+							<li>io.scalac.scala.basic.akka.red.MessageSendingSpec</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#BDD2AA"> 
+					<div>Practical advice</div>
+					<ul>
+						<li>concurrency with Futures and Actors don't mix well</li>
+						<li>when Future completes send message to an actor - don't uuupte the state directly</li>
+						<li>never, ever expose the internal state of the actor to the outside</li>
+					</ul>
+				</section>
+				<!-- End of content -->
+			</div>
+		</div>
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script src="js/scala.min.js"></script>
+		<script>
+			Reveal.initialize({history: true});
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+</html>
